@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from "../context/AuthContext";
+import OurNavbar from './OurNavbar';
 
 const Logincomponent = () => {
   const [email,setEmail] = useState('');
@@ -59,7 +60,9 @@ const Logincomponent = () => {
     }; 
       
   return (
-    <div className="container mt-5" style={{maxWidth: '500px'}}>
+   <div>
+    <OurNavbar/>
+     <div className="container mt-5" style={{maxWidth: '500px'}}>
       <form onSubmit={handleSubmit} className='shadow card p-4 bg-light rounded' >
         <h1 className='text-center text-success'>Masomo School</h1>
         <h2 className='text-center mb-4 text-success'>Login</h2>
@@ -97,6 +100,7 @@ const Logincomponent = () => {
       </form>
        
     </div>
+   </div>
   );
 };
 

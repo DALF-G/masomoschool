@@ -17,6 +17,8 @@ const Registercomponent = () => {
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
+  //  below is the redirecting timer
+  const [countdown, setCountdown] = useState(6);
   // Declare the navigate hook such that if a person successfully register, he can be redirected to login page
   const navigate = useNavigate();
 
@@ -45,8 +47,16 @@ const Registercomponent = () => {
       // update the success hook with a message
       setSuccess(res.data.message)
 
-      alert("Registration Successful")
-      navigate("/login");
+      // Delay navigation for 6 seconds
+      let counter = 6;
+        const interval = setInterval(() => {
+          counter--;
+          setCountdown(counter);
+          if (counter === 0) {
+            clearInterval(interval);
+            navigate("/login");
+          }
+        }, 1000);;
 
 
       // clear the hooks
@@ -60,7 +70,7 @@ const Registercomponent = () => {
       setLoading("");
 
       // then update the error hook with the error meesage
-      setError("Oooops.. Registration Failed. Please try again...")
+      setError(err.response?.data?.message || "Something went wrong")
     }
 
   }
@@ -79,7 +89,7 @@ const Registercomponent = () => {
 
           {loading ? <div className='alert alert-info'>{loading}</div> : null}
           {error ? <div className='alert alert-danger'>{error}</div> : null}
-          {success ? <div className='alert alert-success'>{success}</div> : null}
+          {success && (<div className='alert alert-success'>{success} <h6>- Redirecting in </h6> <h3 className="text-danger">{countdown} s...</h3> </div>)}
 
           <input 
           type="text" 
