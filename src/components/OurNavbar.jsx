@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 const OurNavbar = () => {
   return (
     <div>
@@ -10,7 +11,7 @@ const OurNavbar = () => {
             <Link className='navbar-brand' to={'/'}>Masomo Plus School</Link>
 
             {/* below is the toggle button - Either to expand or collapse contents of the navbar */}
-            <button className="navbar-toggler" type='button' data-bs-toggle="collapse" data-bs-target="#navbarnav" aria-expanded="false">
+            <button className="navbar-toggler" type='button' data-bs-toggle="collapse" data-bs-target="#navbarnav" aria-expanded="false" aria-label="Toggle navigation">
               <span className='navbar-toggler-icon'></span>
             </button>
 
