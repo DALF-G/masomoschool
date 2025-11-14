@@ -53,7 +53,7 @@ const Logincomponent = () => {
         if (error.response && error.response.status === 401){
           setError(error.response.data.message);
         }else{
-          setError ('Network or server error');
+          setError (error.response.data.message);
         }
 
       }

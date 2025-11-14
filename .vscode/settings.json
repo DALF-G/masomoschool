@@ -1,3 +1,4 @@
 {
-    "workbench.commandPalette.experimental.suggestCommands": true
+    "workbench.commandPalette.experimental.suggestCommands": true,
+    "workbench.commandPalette.preserveInput": false
 }

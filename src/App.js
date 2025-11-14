@@ -1,9 +1,7 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import "bootstrap/"
-import bootstrapBundleMin from 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Homecomponent from './components/Homecomponent';
 import Registercomponent from './components/Registercomponent';
@@ -22,6 +20,7 @@ import Student from './components/admin/Student';
 import Classes from './components/admin/Classes';
 import Parents from './components/admin/Parents';
 import Teachers from './components/admin/Teachers';
+import ClassAdd from './components/admin/forms/ClassAdd';
 function App() {
   return (
     <Router>
@@ -42,6 +41,7 @@ function App() {
         <Route path='parents' element={<Parents/>} />
         <Route path='students' element={<Student/>} />
         <Route path='classes' element={<Classes/>} />
+        <Route path='classes/add' element={<ClassAdd/>} />
        </Route>
 
        {/* Below are the teacher routes */}

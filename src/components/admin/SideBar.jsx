@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const SideBar = ()=>{
+const SideBar = ()=>{  
     return(
         <div            
         className="text-white d-flex flex-column p-3"
@@ -43,7 +43,7 @@ const SideBar = ()=>{
                     isActive? 'nav-link bg-success text-white fw-bold' : 'nav-link text-white'
                 }
                 >
-                    <i className="bi bi-person-lines-fill me-2"></i> Parents
+                    <i class="bi bi-people-fill"></i> Parents
                 </NavLink>
             </li>
 
@@ -54,7 +54,7 @@ const SideBar = ()=>{
                     isActive? 'nav-link bg-success text-white fw-bold' : 'nav-link text-white'
                 }
                 >
-                    <i className="bi bi-person-lines-fill me-2"></i> Teachers
+                    <i class="bi bi-person-rolodex"></i> Teachers
                 </NavLink>
             </li>
 
@@ -65,25 +65,15 @@ const SideBar = ()=>{
                     isActive? 'nav-link bg-success text-white fw-bold' : 'nav-link text-white'
                 }
                 >
-                    <i className="bi bi-person-lines-fill me-2"></i> Classes
+                    <i class="bi bi-houses"></i> Classes
                 </NavLink>
             </li>
 
-            <li>
-                <NavLink
-                to={"/"}
-                className={({ isActive }) =>
-                    isActive? 'nav-link bg-success text-white fw-bold' : 'nav-link text-white'
-                }
-                >
-                    <i className="bi bi-person-lines-fill me-2"></i> Home
-                </NavLink>
-            </li>
         </ul>
 
         <hr/>
         <div className="text-center small">
-            <span className="text-light"> 2025 Masomo</span>
+            <span className="text-light"> &copy; 2025 Masomo</span>
         </div>
         </div>
     );

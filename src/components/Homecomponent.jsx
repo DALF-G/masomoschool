@@ -72,7 +72,7 @@ const Homecomponent = () => {
 </section>
 
 {/* Why masomo plus */}
-<section className="py-2 bg-light" id='WhyMasomoPlus'>
+<section className="py-2 bg-light" id='whyMasomoPlus'>
   <div className="container">
     <h2 className="text-success text-center mb-4">Why Choose Masomo Plus</h2>
     {/* Below is the bs grid system that contains three partitions with three cards */}
