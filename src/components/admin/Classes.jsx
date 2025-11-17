@@ -44,7 +44,28 @@ const Classes = () => {
     fetchClasses()
   }, [])
 
-  return (
+  // Below is the function to add the delete function
+  const handleDelete = async (id)=>{
+    if(window.confirm("Do you really want to delete this class?")){
+      try{
+        toast.warning("Deleting Class. please wait..")
+        await axios.delete(`https://kindergartenapi-olyn.onrender.com/api/classroom/${id}`, authHeader)
+
+        //after deleting the class use the fetchclasses()function to retrive the new list of classes
+        fetchClasses()
+      }
+      catch(err){
+        toast.dismiss()
+        toast.error(err.response.data.message)
+      }
+    }
+  }
+
+  // Declare a function to handle what happens when the edit button is clicked
+  const handleEdit = (classData) =>{
+    navigate("/admin-dashboard/classes/edit", {state : {classData}})
+  }
+   return (
     <div className='container mt-2'>
 
       <ToastContainer position='top-right' autoClose={3000}/>
@@ -85,6 +106,7 @@ const Classes = () => {
                   <th>Class Year</th>
                   <th>Teacher</th>
                   <th>Phone</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -95,7 +117,15 @@ const Classes = () => {
                     <td>{ cls.gradeLevel }</td>
                     <td>{ cls.classYear }</td>
                     <td>{ cls.teacher?.name || "N/A" }</td>
-                    <td>{ cls.phone?.phone || "N/A" }</td>
+                    <td>{ cls.teacher?.phone || "N/A" }</td>
+                    <td>
+                      <button className='btn btn-sm btn-warning me-2'><i class="bi bi-pen-fill"
+                      onClick={()=> handleEdit(cls)}></i></button>
+
+                      <button className='btn btn-sm btn-danger me-2'
+                      onClick={()=> handleDelete(cls._id)}
+                      ><i class="bi bi-trash-fill"></i></button>
+                    </td>
                   </tr>
                 ))}
               </tbody>

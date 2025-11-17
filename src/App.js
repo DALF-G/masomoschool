@@ -21,6 +21,7 @@ import Classes from './components/admin/Classes';
 import Parents from './components/admin/Parents';
 import Teachers from './components/admin/Teachers';
 import ClassAdd from './components/admin/forms/ClassAdd';
+import ClassEdit from './components/admin/forms/ClassEdit';
 function App() {
   return (
     <Router>
@@ -42,6 +43,7 @@ function App() {
         <Route path='students' element={<Student/>} />
         <Route path='classes' element={<Classes/>} />
         <Route path='classes/add' element={<ClassAdd/>} />
+        <Route path='classes/edit' element={<ClassEdit/>} />
        </Route>
 
        {/* Below are the teacher routes */}
