@@ -49,8 +49,8 @@ const ClassEdit = () => {
     //   Declare a function to handle the edit action
     const handleEdit = async (e) => {
         e.preventDefault();
-    
-        const data = { name, gradeLevel, classYear };
+        //   Prepare the data gotten from the hooks
+        const data = { name, gradeLevel, classYear,teacher:selectedTeacher };
     
         try {
             toast.info("Please wait as we update the class details...");
@@ -112,7 +112,7 @@ const ClassEdit = () => {
             value={name}
             onChange={(e)=>setName(e.target.value)}
             />  
-            {/* {name}           */}
+            {/* {name} */}
           </div>
 
           <div className="col-md-6 mb-3">

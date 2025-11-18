@@ -53,7 +53,7 @@ const Logincomponent = () => {
         if (error.response && error.response.status === 401){
           setError(error.response.data.message);
         }else{
-          setError (error.response.data.message);
+          setError (error?.response?.data?.message);
         }
 
       }

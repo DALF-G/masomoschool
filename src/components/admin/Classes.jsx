@@ -120,11 +120,11 @@ const Classes = () => {
                     <td>{ cls.teacher?.phone || "N/A" }</td>
                     <td>
                       <button className='btn btn-sm btn-warning me-2'><i class="bi bi-pen-fill"
-                      onClick={()=> handleEdit(cls)}></i></button>
+                      onClick={()=> handleEdit(cls)}></i>Edit</button>
 
                       <button className='btn btn-sm btn-danger me-2'
                       onClick={()=> handleDelete(cls._id)}
-                      ><i class="bi bi-trash-fill"></i></button>
+                      ><i class="bi bi-trash-fill"></i>Delete</button>
                     </td>
                   </tr>
                 ))}

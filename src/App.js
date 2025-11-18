@@ -22,6 +22,9 @@ import Parents from './components/admin/Parents';
 import Teachers from './components/admin/Teachers';
 import ClassAdd from './components/admin/forms/ClassAdd';
 import ClassEdit from './components/admin/forms/ClassEdit';
+import TeacherEdit from './components/admin/forms/TeacherEdit'
+import TeacherAdd from './components/admin/forms/TeacherAdd';
+
 function App() {
   return (
     <Router>
@@ -39,6 +42,8 @@ function App() {
        >
         <Route path='' element={<AdminDashboard/>} />
         <Route path='teachers' element={<Teachers/>} />
+        <Route path='teachers/edit' element={<TeacherEdit/>} />
+        <Route path='teachers/add' element={<TeacherAdd/>} />
         <Route path='parents' element={<Parents/>} />
         <Route path='students' element={<Student/>} />
         <Route path='classes' element={<Classes/>} />
