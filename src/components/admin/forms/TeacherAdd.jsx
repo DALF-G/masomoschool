@@ -39,7 +39,7 @@ const TeacherAdd = () => {
       }
       catch(err){
         toast.dismiss()
-        toast.error(err.response.data.message || "Error adding a new class.")
+        toast.error(err.response.data.message || "Error adding a new teacher.")
       }
     }
   

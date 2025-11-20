@@ -24,6 +24,8 @@ import ClassAdd from './components/admin/forms/ClassAdd';
 import ClassEdit from './components/admin/forms/ClassEdit';
 import TeacherEdit from './components/admin/forms/TeacherEdit'
 import TeacherAdd from './components/admin/forms/TeacherAdd';
+import ParentEdit from './components/admin/forms/ParentEdit';
+import ParentAdd from './components/admin/forms/ParentAdd';
 
 function App() {
   return (
@@ -45,6 +47,8 @@ function App() {
         <Route path='teachers/edit' element={<TeacherEdit/>} />
         <Route path='teachers/add' element={<TeacherAdd/>} />
         <Route path='parents' element={<Parents/>} />
+        <Route path='parents/edit' element={<ParentEdit/>} />
+        <Route path='parents/add' element={<ParentAdd/>} />
         <Route path='students' element={<Student/>} />
         <Route path='classes' element={<Classes/>} />
         <Route path='classes/add' element={<ClassAdd/>} />
