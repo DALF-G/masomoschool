@@ -21,8 +21,8 @@ const ParentEdit = () => {
   const [name, setName] = useState(selectedParent?.name || "")
   const [email, setEmail] = useState(selectedParent?.email || "")
   const [phone, setPhone] = useState(selectedParent?.phone || "")
-  const [nationalId, setNationalId] = useState(selectedParent?.password || "")
-  const [address, setAddress] = useState(selectedParent?.subject || "")
+  const [nationalId, setNationalId] = useState(selectedParent?.nationalId || "")
+  const [address, setAddress] = useState(selectedParent?.address || "")
 
   console.log("The parent details are:", selectedParent)
 
